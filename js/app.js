@@ -892,6 +892,11 @@ async function init() {
  * ✨ Handle landing screen "Enter" button click
  */
 async function handleEnterClick() {
+  // 🎵 Try to start landing music on this user interaction
+  if (state.soundEnabled && elements.sounds.landingMusic) {
+    elements.sounds.landingMusic.play().catch(e => console.log('Music blocked:', e));
+  }
+
   // 🎵 Fade out romantic music
   stopLandingMusic();
 
