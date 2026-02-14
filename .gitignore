@@ -1,0 +1,47 @@
+# Valentine Project .gitignore
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Personal photos (uncomment if you don't want to commit personal photos)
+# assets/images/couple-photo.jpg
+# assets/images/couple-photo.png
+
+# Audio files (large files - consider using Git LFS or external hosting)
+# assets/sounds/*.mp3
+# assets/sounds/*.wav
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables (if you add any)
+.env
+.env.local
+
+# Build files (if you add a build process later)
+dist/
+build/
+
+# Dependencies (if you add npm later)
+node_modules/
+package-lock.json
+yarn.lock
