@@ -800,18 +800,30 @@ function handleReplay() {
   elements.noBtn.style.transform = 'scale(1)';
   elements.noBtn.querySelector('.btn-text').textContent = 'No 🙄';
 
+  // Stop background music
+  elements.sounds.bgMusic.pause();
+  elements.sounds.bgMusic.currentTime = 0;
+
   // Hide all cards
   elements.successCard.classList.add('hidden');
   elements.predictionCard.classList.add('hidden');
   elements.predictionResult.classList.add('hidden');
   elements.quizContainer.classList.remove('hidden');
   elements.submitQuizBtn.classList.add('hidden');
+  elements.questionCard.classList.add('hidden');
 
-  // Show question card
-  elements.questionCard.classList.remove('hidden');
+  // Hide main content
+  elements.mainContent.classList.add('hidden');
 
-  // Retype question
-  typeText(elements.question, CONFIG.question);
+  // 🎵 Show landing screen again and restart landing music
+  elements.landingScreen.style.display = '';
+  elements.landingScreen.style.opacity = '1';
+  elements.landingScreen.style.transform = 'scale(1)';
+
+  // Restart landing music
+  if (state.soundEnabled) {
+    initLandingMusic();
+  }
 }
 
 // ==========================================
